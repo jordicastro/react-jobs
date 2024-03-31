@@ -10,7 +10,6 @@ const HomePage = () => {
         <HomeCards />
         <JobListings />
         <ViewAllJobs />
-      
     </>
   )
 }
