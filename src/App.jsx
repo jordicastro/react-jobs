@@ -9,8 +9,8 @@ import AddJobPage from './pages/AddJobPage';
 
 
 const App = () => {
+  // Add New Job
   const addJob = async (newJob) => {
-    
     // eslint-disable-next-line no-unused-vars
     const res = await fetch('/api/jobs', {
       method: 'POST',
@@ -22,6 +22,15 @@ const App = () => {
     return;
   
   };
+
+  // Delete Job
+  const deleteJob = async (id) => {
+     // eslint-disable-next-line no-unused-vars
+     const res = await fetch(`/api/jobs/${id}`, {
+      method: 'DELETE',
+    });
+    return;
+  }
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -29,7 +38,7 @@ const App = () => {
       <Route index element={<HomePage/>} />
       <Route path='jobs' element={<JobsPage/>} />
       <Route path='*' element={<NotFoundPage/>} />
-      <Route path='jobs/:id' element={<JobPage/>} loader={jobLoader}/>
+      <Route path='jobs/:id' element={<JobPage deleteJob={deleteJob}/>} loader={jobLoader}/>
       <Route path='add-job' element={<AddJobPage addJobSubmit={addJob}/>} />
     </Route>
     )
