@@ -1,9 +1,8 @@
 //import { useEffect, useState } from 'react'
-import { useParams, useLoaderData, Link } from 'react-router-dom'
-import { FaArrowLeft, FaMap, FaMapMarker } from 'react-icons/fa';
+import { useLoaderData, Link } from 'react-router-dom'
+import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 
 const JobPage = () => {
-  const { id } = useParams();
   const job = useLoaderData();
   // const [job, setJob] = useState(null);
   // const [loading, setLoading] = useState(true);
@@ -113,6 +112,7 @@ const JobPage = () => {
   );
 };
 
+{/* fetches the backend for job json data */}
 const jobLoader = async({ params }) => {
   const res = await fetch(`/api/jobs/${params.id}`);
   const data = await res.json();

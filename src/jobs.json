@@ -1,5 +1,5 @@
 {
- "jobs" : [
+  "jobs": [
     {
       "id": "1",
       "title": "Senior React Developer",
@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "bbc2",
+      "title": "Test Job 1",
+      "type": "Full-Time",
+      "location": "Denver CO",
+      "description": "This is a Test. backend ya hear me?",
+      "salary": "Under 50K",
+      "company": {
+        "name": "notion",
+        "description": "this is the company description. we are cool please work for us. ",
+        "contactEmail": "jordi@gmail.com",
+        "contactPhone": "787-812-0485"
+      }
     }
-]
+  ]
 }
